@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord Directeur - CastingConnect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+    <script src="../js/main.js" defer></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-2xl font-bold text-blue-600">CastingConnect</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-blue-600">
+                        <i class="fas fa-bell"></i>
+                        <span class="ml-1">5</span>
+                    </a>
+                    <div class="relative">
+                        <button class="flex items-center space-x-2 text-gray-600 hover:text-blue-600">
+                            <img src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg" alt="Profile" class="w-8 h-8 rounded-full object-cover">
+                            <span>Marie Martin</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <!-- Welcome Section -->
+        <div class="px-4 py-6 sm:px-0">
+            <h1 class="text-3xl font-bold text-gray-900">Bonjour, Marie 👋</h1>
+            <p class="mt-2 text-gray-600">Gérez vos castings et consultez les candidatures.</p>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <!-- Castings actifs -->
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-film text-2xl text-blue-600"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">
+                                    Castings actifs
+                                </dt>
+                                <dd class="flex items-baseline">
+                                    <div class="text-2xl font-semibold text-gray-900">
+                                        3
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nouvelles candidatures -->
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-users text-2xl text-green-600"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">
+                                    Nouvelles candidatures
+                                </dt>
+                                <dd class="flex items-baseline">
+                                    <div class="text-2xl font-semibold text-gray-900">
+                                        12
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entretiens planifiés -->
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-calendar-check text-2xl text-purple-600"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">
+                                    Entretiens planifiés
+                                </dt>
+                                <dd class="flex items-baseline">
+                                    <div class="text-2xl font-semibold text-gray-900">
+                                        8
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Castings terminés -->
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-check-circle text-2xl text-gray-600"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">
+                                    Castings terminés
+                                </dt>
+                                <dd class="flex items-baseline">
+                                    <div class="text-2xl font-semibold text-gray-900">
+                                        15
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="mt-8">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-xl font-semibold text-gray-900">Vos castings actifs</h2>
+                <button class="px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                    + Nouveau casting
+                </button>
+            </div>
+
+            <!-- Castings List -->
+            <div class="bg-white shadow overflow-hidden sm:rounded-md">
+                <ul class="divide-y divide-gray-200">
+                    <!-- Casting 1 -->
+                    <li>
+                        <div class="px-4 py-4 sm:px-6">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0">
+                                        <img class="h-12 w-12 rounded-lg object-cover" src="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg" alt="Project">
+                                    </div>
+                                    <div class="ml-4">
+                                        <h3 class="text-lg font-medium text-gray-900">Court-métrage "L'Aube"</h3>
+                                        <p class="text-sm text-gray-500">Rôle principal - Homme 25-35 ans</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                        15 candidatures
+                                    </span>
+                                    <button class="text-gray-400 hover:text-gray-500">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-map-marker-alt mr-1.5"></i>
+                                    Paris
+                                </div>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-1.5"></i>
+                                    Mars 2024
+                                </div>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-clock mr-1.5"></i>
+                                    5 jours
+                                </div>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-euro-sign mr-1.5"></i>
+                                    1500€
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Casting 2 -->
+                    <li>
+                        <div class="px-4 py-4 sm:px-6">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0">
+                                        <img class="h-12 w-12 rounded-lg object-cover" src="https://images.pexels.com/photos/3062541/pexels-photo-3062541.jpeg" alt="Project">
+                                    </div>
+                                    <div class="ml-4">
+                                        <h3 class="text-lg font-medium text-gray-900">Publicité "Bio Market"</h3>
+                                        <p class="text-sm text-gray-500">Famille - Parents et 2 enfants</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                        8 candidatures
+                                    </span>
+                                    <button class="text-gray-400 hover:text-gray-500">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-map-marker-alt mr-1.5"></i>
+                                    Lyon
+                                </div>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-1.5"></i>
+                                    Avril 2024
+                                </div>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-clock mr-1.5"></i>
+                                    2 jours
+                                </div>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-euro-sign mr-1.5"></i>
+                                    800€
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Casting 3 -->
+                    <li>
+                        <div class="px-4 py-4 sm:px-6">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0">
+                                        <img class="h-12 w-12 rounded-lg object-cover" src="https://images.pexels.com/photos/2873486/pexels-photo-2873486.jpeg" alt="Project">
+                                    </div>
+                                    <div class="ml-4">
+                                        <h3 class="text-lg font-medium text-gray-900">Série TV "Horizons"</h3>
+                                        <p class="text-sm text-gray-500">Seconds rôles - Multiples profils</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                                        23 candidatures
+                                    </span>
+                                    <button class="text-gray-400 hover:text-gray-500">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-map-marker-alt mr-1.5"></i>
+                                    Marseille
+                                </div>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-1.5"></i>
+                                    Mai 2024
+                                </div>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-clock mr-1.5"></i>
+                                    3 semaines
+                                </div>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-euro-sign mr-1.5"></i>
+                                    2500€
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Recent Applications -->
+        <div class="mt-8">
+            <h2 class="text-xl font-semibold text-gray-900 mb-6">Candidatures récentes</h2>
+            <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+                <div class="divide-y divide-gray-200">
+                    <!-- Application 1 -->
+                    <div class="p-4 flex items-center justify-between">
+                        <div class="flex items-center">
+                            <img class="h-10 w-10 rounded-full" src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg" alt="Candidate">
+                            <div class="ml-4">
+                                <h4 class="text-sm font-medium text-gray-900">Thomas Bernard</h4>
+                                <p class="text-sm text-gray-500">Pour: Court-métrage "L'Aube"</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button class="px-3 py-1 text-sm text-green-600 hover:bg-green-50 rounded-md">
+                                Accepter
+                            </button>
+                            <button class="px-3 py-1 text-sm text-red-600 hover:bg-red-50 rounded-md">
+                                Refuser
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Application 2 -->
+                    <div class="p-4 flex items-center justify-between">
+                        <div class="flex items-center">
+                            <img class="h-10 w-10 rounded-full" src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg" alt="Candidate">
+                            <div class="ml-4">
+                                <h4 class="text-sm font-medium text-gray-900">Sophie Lambert</h4>
+                                <p class="text-sm text-gray-500">Pour: Publicité "Bio Market"</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button class="px-3 py-1 text-sm text-green-600 hover:bg-green-50 rounded-md">
+                                Accepter
+                            </button>
+                            <button class="px-3 py-1 text-sm text-red-600 hover:bg-red-50 rounded-md">
+                                Refuser
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
